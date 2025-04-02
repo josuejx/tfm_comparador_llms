@@ -12,5 +12,5 @@
 }
 
 body {
-  @apply bg-theme-lightgray dark:bg-theme-midnight;
+  @apply bg-theme-lightgray dark:bg-theme-steelblue;
 }
