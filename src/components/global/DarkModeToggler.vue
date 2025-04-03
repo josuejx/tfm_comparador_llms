@@ -6,7 +6,7 @@ import SunIcon from '@/assets/icons/SunIcon.vue';
 
 <template>
     <button @click="Utils.toggleDarkMode(undefined)"
-        class="cursor-pointer rounded p-2 hover:bg-[#97726020] dark:hover:bg-[#eacdb120] hover:scale-125 transition">
+        class="cursor-pointer rounded p-2 hover:scale-125 active:scale-95 transition">
         <MoonIcon color="#1C2E4C" class="size-4 dark:hidden" />
         <SunIcon color="#fff" class="size-4 hidden dark:block" />
     </button>
