@@ -12,9 +12,9 @@ import SendIcon from "@/assets/icons/SendIcon.vue";
     </div>
     <div class="mx-4 mb-4 relative flex">
       <textarea type="text" placeholder="Pregunta lo que quieras"
-        class="w-full py-4 pl-4 pr-14 rounded-2xl shadow-lg bg-theme-lightgray dark:bg-theme-midnight resize-none"></textarea>
+        class="w-full py-4 pl-4 pr-14 rounded-2xl shadow-lg bg-theme-lightgray dark:bg-theme-steelblue resize-none"></textarea>
       <button
-        class="absolute top-1/2 right-4 -translate-y-1/2 p-2 rounded-2xl shadow-lg bg-theme-seablue dark:bg-theme-steelblue text-white cursor-pointer  hover:scale-105 active:scale-95 transition">
+        class="absolute top-1/2 right-4 -translate-y-1/2 p-2 rounded-2xl shadow-lg bg-theme-seablue text-white cursor-pointer  hover:scale-105 active:scale-95 transition">
         <SendIcon color="#FFFFFF" class="size-6" />
       </button>
     </div>

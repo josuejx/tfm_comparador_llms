@@ -6,9 +6,9 @@
 @theme {
   --color-theme-lightgray: #EEF0F8;
   --color-theme-steelblue: #1C2E4C;
-  --color-theme-darkgray: #3E557F;
   --color-theme-midnight: #0C1A32;
   --color-theme-seablue: #6993FF;
+  --color-theme-moon: #3e557f;
 }
 
 body {
