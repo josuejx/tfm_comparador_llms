@@ -25,7 +25,7 @@ const setSelectedModel = (modelId: number) => {
         :key="model.id"
         @click="setSelectedModel(model.id)"
         :class="{
-          'bg-theme-seablue dark:bg-theme-steelblue':
+          'bg-theme-seablue dark:bg-theme-steelblue text-white':
             model.id === selectedModel,
           'bg-white dark:bg-theme-midnight': model.id !== selectedModel,
         }"

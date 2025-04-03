@@ -23,7 +23,7 @@ const setSelectedDataset = (datasetId: number) => {
         :key="dataset.id"
         @click="setSelectedDataset(dataset.id)"
         :class="{
-          'bg-theme-seablue dark:bg-theme-steelblue':
+          'bg-theme-seablue dark:bg-theme-steelblue text-white':
             dataset.id === selectedDataset,
           'bg-white dark:bg-theme-midnight': dataset.id !== selectedDataset,
         }"
