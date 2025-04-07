@@ -4,7 +4,7 @@ import type Message from '@/types/message'
 export const useChatStore = defineStore('chat', {
   state: () => ({
     userInput: '',
-    modelIsTyping: true,
+    modelIsTyping: false,
     messages: [] as Message[],
   }),
   getters: {

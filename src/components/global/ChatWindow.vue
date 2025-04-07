@@ -13,7 +13,7 @@ const chatStore = useChatStore();
     </div>
     <div class="mx-4 mb-4 relative flex">
       <textarea type="text" 
-        placeholder="Pregunta lo que quieras" 
+        :placeholder="chatStore.modelIsTyping ? 'Respondiendo... ' : 'Pregunta lo que quieras'" 
         v-model="chatStore.userInput"
         :disabled="chatStore.modelIsTyping"
         @keydown.enter.exact.prevent="chatStore.addUserMessage()"
