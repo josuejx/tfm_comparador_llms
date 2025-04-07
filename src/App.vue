@@ -9,9 +9,9 @@ import DatasetSelector from "@/components/global/DatasetSelector.vue";
   <div class="flex flex-col min-h-screen max-h-screen dark:text-white">
     <TopBar />
     <div class="grow flex p-4 gap-4 overflow-y-auto">
-      <ModelSelector />
+      <ModelSelector class="hidden lg:flex" />
       <ChatWindow class="flex-1" />
-      <DatasetSelector />
+      <DatasetSelector class="hidden 2xl:flex" />
     </div>
   </div>
 </template>
