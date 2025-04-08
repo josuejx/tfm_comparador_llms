@@ -12,10 +12,12 @@ import { isDarkMode } from '@/utils/utils';
         <h1 class="text-2xl font-bold text-theme-steelblue dark:text-white">EvaLLM</h1>
         <p class="text-gray-500 dark:text-gray-300 text-[10px]">Comparador de LLMs</p>
       </RouterLink>
-      <nav class="flex items-center ml-8 gap-2">
-        <RouterLink to="/" class="text-theme-steelblue dark:text-white">Chat</RouterLink>
+      <nav class="flex items-center ml-8 gap-4 text-theme-steelblue dark:text-white">
+        <RouterLink to="/" class="hover:text-theme-seablue hover:scale-110 active:scale-95 transition">Chat</RouterLink>
+        <RouterLink to="/about" class="hover:text-theme-seablue hover:scale-110 active:scale-95 transition">Acerca de</RouterLink>
       </nav>
     </div>
     <DarkModeToggler />
   </div>
 </template>
+
