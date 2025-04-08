@@ -1,6 +1,5 @@
 <script setup lang="ts">
-
-defineProps<{ message: string, type: 'USER' | 'MODEL' }>();
+defineProps<{ message: string; type: "USER" | "MODEL" }>();
 </script>
 
 <template>

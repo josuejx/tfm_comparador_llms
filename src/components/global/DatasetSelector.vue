@@ -2,14 +2,14 @@
 import { ref } from "vue";
 
 const datasets = ref([
-  { id: 1, name: "Dataset 1" },
-  { id: 2, name: "Dataset 2" },
+	{ id: 1, name: "Dataset 1" },
+	{ id: 2, name: "Dataset 2" },
 ]);
 
 const selectedDataset = ref(1);
 
 const setSelectedDataset = (datasetId: number) => {
-  selectedDataset.value = datasetId;
+	selectedDataset.value = datasetId;
 };
 </script>
 

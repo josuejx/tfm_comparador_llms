@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import logo_unir from '@/assets/img/logo_unir.vue';
-import { isDarkMode } from '@/utils/utils';
+import logo_unir from "@/assets/img/logo_unir.vue";
+import { isDarkMode } from "@/utils/utils";
 </script>
 
 <template>

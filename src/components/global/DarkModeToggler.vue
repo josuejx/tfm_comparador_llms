@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Utils from '@/utils/utils';
-import MoonIcon from '@/assets/icons/MoonIcon.vue';
-import SunIcon from '@/assets/icons/SunIcon.vue';
+import Utils from "@/utils/utils";
+import MoonIcon from "@/assets/icons/MoonIcon.vue";
+import SunIcon from "@/assets/icons/SunIcon.vue";
 </script>
 
 <template>

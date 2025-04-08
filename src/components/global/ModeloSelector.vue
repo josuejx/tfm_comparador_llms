@@ -2,14 +2,14 @@
 import { ref } from "vue";
 
 const models = ref([
-  { id: 1, name: "Modelo 1" },
-  { id: 2, name: "Modelo 2" },
+	{ id: 1, name: "Modelo 1" },
+	{ id: 2, name: "Modelo 2" },
 ]);
 
 const selectedModel = ref(1);
 
 const setSelectedModel = (modelId: number) => {
-  selectedModel.value = modelId;
+	selectedModel.value = modelId;
 };
 </script>
 

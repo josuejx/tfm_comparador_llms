@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import DarkModeToggler from '@/components/global/DarkModeToggler.vue';
-import { isDarkMode } from '@/utils/utils';
+import DarkModeToggler from "@/components/global/DarkModeToggler.vue";
+import { isDarkMode } from "@/utils/utils";
 </script>
 
 <template>
