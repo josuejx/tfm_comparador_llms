@@ -32,8 +32,8 @@ Los usuarios pueden comparar resultados, observar cómo responden los modelos a 
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tuusuario/nombre-del-repo.git
-cd nombre-del-repo
+git clone https://github.com/josuejx/tfm_comparador_llms.git
+cd tfm_comparador_llms
 
 # Instalar dependencias
 npm install
