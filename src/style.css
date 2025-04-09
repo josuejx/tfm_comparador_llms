@@ -2,6 +2,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Diseño inspirado en https://multipurposethemes.com/blog/desktop-chatbot-ui-design-simplify-chatbot-integration/ */
+@plugin "@midudev/tailwind-animations";
 
 @theme {
 	--color-theme-lightgray: #eef0f8;
