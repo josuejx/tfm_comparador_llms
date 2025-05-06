@@ -2,6 +2,7 @@
 import { useCompareStore } from '@/stores/compare';
 import ChatBubble from "@/components/global/ChatBubble.vue";
 import SendIcon from "@/assets/icons/SendIcon.vue";
+import ModelButtonSelector from "@/components/global/ModelButtonSelector.vue";
 
 const compareStore = useCompareStore();
 </script>
@@ -11,12 +12,18 @@ const compareStore = useCompareStore();
         <div class="grow flex gap-4 w-full">
             <div
                 class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg flex-1 overflow-y-auto flex flex-col gap-2 px-4 pt-4">
+                <div>
+                    <ModelButtonSelector />
+                </div>
                 <ChatBubble v-for="message in compareStore.messagesModel1" :key="message.id" :message="message.content"
                     :type="message.role" :animate="message.animate"
                     :onAnimationEnd="() => compareStore.updateMessageAnimation('model1', message.id)" />
             </div>
             <div
                 class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg flex-1 overflow-y-auto flex flex-col gap-2 px-4 pt-4">
+                <div>
+                    <ModelButtonSelector />
+                </div>
                 <ChatBubble v-for="message in compareStore.messagesModel2" :key="message.id" :message="message.content"
                     :type="message.role" :animate="message.animate"
                     :onAnimationEnd="() => compareStore.updateMessageAnimation('model2', message.id)" />
