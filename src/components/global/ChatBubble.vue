@@ -1,16 +1,31 @@
 <script setup lang="ts">
-const props = defineProps<{ message: string; type: "USER" | "MODEL", animate: boolean, onAnimationEnd: () => void }>();
+import type Message from '@/types/message';
+import moment from 'moment';
+import { computed } from 'vue';
 
-const animationEnd = (_: AnimationEvent) => props.onAnimationEnd();
+const props = defineProps<{ message: Message }>();
+
+const animationEnd = (_: AnimationEvent) => props.message.animate = false;
+
+const isErrorMessage = computed(() => {
+  return props.message.role === 'MODEL' && props.message.content.startsWith('ERROR:');
+});
 </script>
 
 <template>
-  <div class="relative rounded-2xl shadow-lg p-2 w-fit"
-    :class="{ 
-      'rounded-br-none self-end bg-theme-seablue text-white': type === 'USER', 
-      'rounded-bl-none bg-theme-lightgray dark:bg-theme-steelblue': type === 'MODEL' 
+  <div class="relative rounded-2xl shadow-lg p-2 w-fit max-w-[70%] transition-all duration-300 ease-in-out" :class="{
+    'rounded-br-none self-end bg-theme-seablue text-white': message.role === 'USER',
+    'rounded-bl-none bg-theme-lightgray dark:bg-theme-steelblue': message.role === 'MODEL' && !isErrorMessage,
+    'rounded-bl-none bg-theme-lightgray dark:bg-theme-steelblue text-red': message.role === 'MODEL' && isErrorMessage
+  }">
+    <p class="whitespace-pre-line" :class="{ 'typewritter-effect': message.role === 'MODEL' && message.animate }"
+      @animationend="animationEnd">{{ message.content }}</p>
+    <div class="flex items-center text-xs mt-2" :class="{
+      'text-gray-200 justify-end': message.role === 'USER',
+      'text-gray-500 dark:text-gray-300': message.role === 'MODEL'
     }">
-    <p class="whitespace-pre-line" :class="{ 'typewritter-effect': type === 'MODEL' && animate }" @animationend="animationEnd">{{ message }}</p>
+      <p>{{ moment(message.timestamp).format('HH:mm') }}</p>
+    </div>
   </div>
 </template>
 
@@ -23,6 +38,7 @@ const animationEnd = (_: AnimationEvent) => props.onAnimationEnd();
   from {
     clip-path: inset(0 100% 0 0);
   }
+
   to {
     clip-path: inset(0 0 0 0);
   }

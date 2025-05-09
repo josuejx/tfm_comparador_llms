@@ -4,4 +4,5 @@ export default interface Message {
 	role: "USER" | "MODEL";
 	timestamp: string;
 	animate: boolean;
+	model?: string;
 }
