@@ -14,6 +14,7 @@ import { isDarkMode } from "@/utils/utils";
       </RouterLink>
       <nav class="flex items-center ml-8 gap-4 text-theme-steelblue dark:text-white">
         <RouterLink to="/" class="hover:text-theme-seablue hover:scale-110 active:scale-95 transition">Chat</RouterLink>
+        <RouterLink to="/comparing" class="hover:text-theme-seablue hover:scale-110 active:scale-95 transition">Comparación</RouterLink>
         <RouterLink to="/about" class="hover:text-theme-seablue hover:scale-110 active:scale-95 transition">Acerca de</RouterLink>
       </nav>
     </div>
