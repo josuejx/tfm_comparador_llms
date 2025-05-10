@@ -13,8 +13,7 @@ Los usuarios pueden comparar resultados, observar cómo responden los modelos a 
 - **Frontend Framework**: [Vue.js](https://vuejs.org/) / [React](https://reactjs.org/) (especificar el que uses)
 - **Empaquetador**: [Vite](https://vitejs.dev/) / Webpack
 - **Estilo**: Tailwind CSS / CSS Modules / otro
-- **Dataset**: [IMDB Movie Reviews Dataset](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
-- **Modelos NLP**: 
+- **HuggingFace Inference API**
 
 ## 🚀 Características Principales
 
