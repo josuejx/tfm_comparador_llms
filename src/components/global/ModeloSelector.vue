@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import { HuggingFaceModels } from "@/services/huggingface.services";
 import { useChatStore } from "@/stores/chat";
 
