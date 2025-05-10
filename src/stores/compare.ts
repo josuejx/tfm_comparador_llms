@@ -1,27 +1,30 @@
 import { defineStore } from "pinia";
 import type Message from "@/types/message";
+import { HuggingFaceService, HuggingFaceModels } from "@/services/huggingface.services";
 
 export const useCompareStore = defineStore("compare", {
     state: () => ({
         userInput: "",
         modelIsTyping: false,
+        selectedModel1: HuggingFaceModels[0].id,
+        selectedModel2: HuggingFaceModels[1].id,
         messagesModel1: [] as Message[],
         messagesModel2: [] as Message[],
     }),
     getters: {},
     actions: {
-        addUserMessage() {
+        async addUserMessage() {
             if (!this.userInput.trim()) return;
             this.addModelMessage("model1", this.userInput, "USER");
             this.addModelMessage("model2", this.userInput, "USER");
             this.userInput = "";
 
             this.modelIsTyping = true;
-            setTimeout(() => {
-                this.modelIsTyping = false;
-                this.addModelMessage("model1", "Respuesta del modelo 1", "MODEL");
-                this.addModelMessage("model2", "Respuesta del modelo 2", "MODEL");
-            }, 5000);
+            let responseModel1 = await HuggingFaceService.queryLLM(this.userInput, this.selectedModel1);
+            let responseModel2 = await HuggingFaceService.queryLLM(this.userInput, this.selectedModel2);
+            this.modelIsTyping = false;
+            this.addModelMessage("model1", responseModel1, "MODEL");
+            this.addModelMessage("model2", responseModel2, "MODEL");
         },
         addModelMessage(model: "model1" | "model2", content: string, role: "USER" | "MODEL") {
             if (model === "model1") {
@@ -51,5 +54,9 @@ export const useCompareStore = defineStore("compare", {
                 this.messagesModel2.find((message) => message.id === id)!.animate = false;
             }
         },
+        clearMessages() {
+            this.messagesModel1 = [];
+            this.messagesModel2 = [];
+        }
     },
 });
