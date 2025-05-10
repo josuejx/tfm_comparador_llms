@@ -26,7 +26,8 @@ Los usuarios pueden comparar resultados, observar cómo responden los modelos a 
 
 ## 📸 Capturas de Pantalla
 
-> *(Añade aquí screenshots si los tienes)*
+![image](https://github.com/user-attachments/assets/8818745e-776e-4fae-b4dc-fc7faddee422)
+
 
 ## 📦 Instalación y Uso
 
