@@ -54,5 +54,9 @@ export const useCompareStore = defineStore("compare", {
                 this.messagesModel2.find((message) => message.id === id)!.animate = false;
             }
         },
+        clearMessages() {
+            this.messagesModel1 = [];
+            this.messagesModel2 = [];
+        }
     },
 });

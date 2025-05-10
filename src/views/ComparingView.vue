@@ -24,14 +24,16 @@ function handleModelChange(modelNum: string) {
             <div
                 class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg flex-1 overflow-y-auto flex flex-col gap-2 px-4 pt-4">
                 <div>
-                    <ModelButtonSelector v-model="compareStore.selectedModel1" :valueChanged="() => handleModelChange('model1')" />
+                    <ModelButtonSelector v-model="compareStore.selectedModel1"
+                        :valueChanged="() => handleModelChange('model1')" />
                 </div>
                 <ChatBubble v-for="message in compareStore.messagesModel1" :key="message.id" :message="message" />
             </div>
             <div
                 class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg flex-1 overflow-y-auto flex flex-col gap-2 px-4 pt-4">
                 <div>
-                    <ModelButtonSelector v-model="compareStore.selectedModel2" :valueChanged="() => handleModelChange('model2')" />
+                    <ModelButtonSelector v-model="compareStore.selectedModel2"
+                        :valueChanged="() => handleModelChange('model2')" />
                 </div>
                 <ChatBubble v-for="message in compareStore.messagesModel2" :key="message.id" :message="message" />
             </div>
@@ -47,6 +49,12 @@ function handleModelChange(modelNum: string) {
             -translate-y-1/2 p-2 rounded-2xl shadow-lg bg-theme-seablue text-white cursor-pointer 
             hover:scale-105 active:scale-95 transition disabled:opacity-50 disabled:cursor-not-allowed">
                 <SendIcon color="#FFFFFF" class="size-6" />
+            </button>
+            <button @click="compareStore.clearMessages()" class="absolute top-1/2 right-16 -translate-y-1/2 p-2 rounded-2xl 
+        bg-white text-black border-1 border-black dark:bg-theme-moon dark:border-slate-400 dark:text-white cursor-pointer 
+          hover:scale-105 active:scale-95 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                :disabled="!compareStore.messagesModel1.length && !compareStore.messagesModel2.length">
+                Borrar chats
             </button>
         </div>
     </div>
