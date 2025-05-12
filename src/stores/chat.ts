@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import type Message from "@/types/message";
 import { HuggingFaceService, HuggingFaceModels } from "@/services/huggingface.services";
+import { OpenAIService } from '@/services/openai.services';
 
 export const useChatStore = defineStore("chat", {
 	state: () => ({
@@ -42,5 +43,8 @@ export const useChatStore = defineStore("chat", {
 		clearMessages() {
 			this.messages = [];
 		},
+		async analysisResults() {
+			return await OpenAIService.analyzeModelResults(this.messages);
+		}
 	},
 });

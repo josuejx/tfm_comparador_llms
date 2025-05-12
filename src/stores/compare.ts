@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import type Message from "@/types/message";
 import { HuggingFaceService, HuggingFaceModels } from "@/services/huggingface.services";
+import { OpenAIService } from '@/services/openai.services';
 
 export const useCompareStore = defineStore("compare", {
     state: () => ({
@@ -57,6 +58,9 @@ export const useCompareStore = defineStore("compare", {
         clearMessages() {
             this.messagesModel1 = [];
             this.messagesModel2 = [];
-        }
+        },
+        async analysisResults() {
+			return await OpenAIService.analyzeMultipleModels(this.messagesModel1, this.messagesModel2);
+		}
     },
 });
