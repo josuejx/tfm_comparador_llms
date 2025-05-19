@@ -2,8 +2,13 @@
 import ChatBubble from "@/components/global/ChatBubble.vue";
 import SendIcon from "@/assets/icons/SendIcon.vue";
 import { useChatStore } from "@/stores/chat";
+import router from "@/router";
 
 const chatStore = useChatStore();
+
+function redirectToAnalysis() {
+  router.push('/analysis/chat')
+}
 </script>
 
 <template>
@@ -25,8 +30,23 @@ const chatStore = useChatStore();
         bg-white text-black border-1 border-black dark:bg-theme-moon dark:border-slate-400 dark:text-white cursor-pointer 
           hover:scale-105 active:scale-95 transition disabled:opacity-50 disabled:cursor-not-allowed"
         :disabled="!chatStore.messages.length">
-        Borrar chat
+        <img
+          src="@/assets/icons/CleanIcon.svg"
+          alt="clean icon"
+          class="size-5 dark:hidden"
+        />
+        <img
+          src="@/assets/icons/CleanIconWhite.svg"
+          alt="clean icon"
+          class="size-5 hidden dark:block"
+        />
       </button>
+      <button @click="redirectToAnalysis()" class="absolute top-1/2 right-28 -translate-y-1/2 p-2 rounded-2xl 
+        bg-white text-black border-1 border-black dark:bg-theme-moon dark:border-slate-400 dark:text-white cursor-pointer 
+          hover:scale-105 active:scale-95 transition disabled:opacity-50 disabled:cursor-not-allowed"
+        :disabled="!chatStore.messages.length">
+        Analizar modelo
+    </button>
     </div>
   </div>
 </template>
