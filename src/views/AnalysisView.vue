@@ -23,7 +23,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg">
+    <div class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg w-full">
         <div class="p-4">
             <h2 class="text-lg font-semibold">Analysis Results</h2>
             <div v-if="isLoading" class="text-center">

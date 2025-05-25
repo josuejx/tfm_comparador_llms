@@ -1,4 +1,4 @@
 const HF_TOKEN = "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";
-const OPENAI_API_KEY = "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";
+const OPENAI_API_KEY = "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";
 
 export { HF_TOKEN, OPENAI_API_KEY };
