@@ -3,6 +3,7 @@ import { computed, onMounted, ref } from 'vue';
 import { useChatStore } from "@/stores/chat";
 import { useCompareStore } from '@/stores/compare';
 import router from '@/router';
+import { formatFromString } from '@quilicicf/markdown-formatter';
 
 const currentStore = computed(() => router.currentRoute.value.params.store);
 const chatStore = useChatStore();
@@ -10,6 +11,7 @@ const compareStore = useCompareStore();
 
 let isLoading = ref(false);
 let analysisResults: any = null;
+let formatedMarkdown = ref('');
 
 onMounted(async () => {
     isLoading.value = true;
@@ -17,6 +19,9 @@ onMounted(async () => {
         analysisResults = await chatStore.analysisResults();
     } else {
         analysisResults = await compareStore.analysisResults();
+    }
+    if (!analysisResults) {
+        console.error('No analysis results found');
     }
     isLoading.value = false;
 });
@@ -30,7 +35,7 @@ onMounted(async () => {
                 <p>Loading...</p>
             </div>
             <div v-else-if="analysisResults">
-                <pre>{{ JSON.stringify(analysisResults, null, 2) }}</pre>
+                <pre>{{ formatedMarkdown }}</pre>
             </div>
             <div v-else>
                 <p>No analysis results available.</p>

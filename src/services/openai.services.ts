@@ -24,7 +24,7 @@ export class OpenAIService {
           },
           ...messages.map((message) => {
             return {
-              role: message.role,
+              role: message.role === "USER" ? "user" : "assistant",
               content: message.content,
             };
           }),
@@ -33,7 +33,7 @@ export class OpenAIService {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to fetch data from OpenAI API");
+      throw new Error("Failed to fetch data from OpenAI API: " + response.statusText);
     }
 
     const data = await response.json();
@@ -78,7 +78,7 @@ export class OpenAIService {
             content: `Respuesta del Modelo 1:`,
           },
           ...messagesModel1.map((message) => ({
-            role: message.role,
+            role: message.role === "USER" ? "user" : "assistant",
             content: message.content,
           })),
           {
@@ -86,7 +86,7 @@ export class OpenAIService {
             content: `Respuesta del Modelo 2:`,
           },
           ...messagesModel2.map((message) => ({
-            role: message.role,
+            role: message.role === "USER" ? "user" : "assistant",
             content: message.content,
           })),
           {
