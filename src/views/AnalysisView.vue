@@ -21,10 +21,10 @@ onMounted(async () => {
         analysisResults = await compareStore.analysisResults();
     }
     if (!analysisResults) {
-        console.error('No analysis results found');
+        console.error('No hay resultados disponibles.');
     }
     const md = markdownit();
-    formatedMarkdown.value = md.render(analysisResults ?? '## No results available');
+    formatedMarkdown.value = md.render(analysisResults ?? '## No hay resultados disponibles');
     isLoading.value = false;
 });
 </script>
@@ -32,15 +32,15 @@ onMounted(async () => {
 <template>
     <div class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg w-full">
         <div class="p-4">
-            <h2 class="text-lg font-semibold">Analysis Results</h2>
+            <h2 class="text-lg font-semibold">Modelo Juez</h2>
             <div v-if="isLoading" class="text-center">
-                <p>Loading...</p>
+                <p>Cargando...</p>
             </div>
             <div v-else-if="analysisResults">
                 <pre v-html="formatedMarkdown"></pre>
             </div>
             <div v-else>
-                <p>No analysis results available.</p>
+                <p>No hay resultados disponibles.</p>
             </div>
         </div>
     </div>
