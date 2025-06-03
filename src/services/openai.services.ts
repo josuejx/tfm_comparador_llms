@@ -20,7 +20,8 @@ export class OpenAIService {
         1. Leer los análisis del modelo sobre un texto.
         2. Evaluar sus respuestas en cuanto a precisión, claridad, coherencia y profundidad.
         3. Asignar al modelo una puntuación del 1 al 5 en cada uno de los siguientes criterios: precisión, claridad, coherencia, profundidad.
-        4. Devuelve también los resultados en una tabla sencilla o como datos estructurados para graficar si es posible.`,
+        4. Devuelve también los resultados en una tabla sencilla o como datos estructurados para graficar si es posible.
+        5. Por último, proporciona un resumen textual de tu evaluación sobre el análisis realizado por el modelo.`,
           },
           ...messages.map((message) => {
             return {
@@ -67,7 +68,8 @@ export class OpenAIService {
         2. Comparar sus respuestas en cuanto a precisión, claridad, coherencia y profundidad.
         3. Indicar cuál crees que es más acertado y por qué.
         4. Asignar a cada modelo una puntuación del 1 al 5 en cada uno de los siguientes criterios: precisión, claridad, coherencia, profundidad.
-        5. Devuelve también los resultados en una tabla sencilla o como datos estructurados para graficar si es posible.`,
+        5. Devuelve también los resultados en una tabla sencilla o como datos estructurados para graficar si es posible.
+        6. Por último, proporciona un resumen textual de tu evaluación sobre el análisis realizado por ambos modelos.`,
           },
           {
             role: "user",

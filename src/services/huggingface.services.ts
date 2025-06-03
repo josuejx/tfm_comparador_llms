@@ -18,14 +18,19 @@ class HuggingFaceService {
         model: model,
         messages: [
           {
+            role: "system",
+            content: `Eres un modelo de lenguaje que analiza el sentimiento de un texto. 
+            Tu tarea es clasificar el sentimiento del texto en una de las siguientes categorías: 'Positivo', 'Negativo' o 'Neutral'. 
+            Proporciona también el razonamiento detrás de tu clasificación.`,
+          },
+          {
             role: "user",
-            content:
-              "Analyze the sentiment of the following text and classify it into one of the following categories: 'Positive', 'Negative', or 'Neutral'. Your answer should be only one word. Do not include any additional text or explanation. Here is the text: " +
-              input,
+            content: input
           },
         ],
       });
 
+      console.log("Chat completion response:", chatCompletion);
       let response = chatCompletion.choices[0].message.content ?? "";
 
       return response;

@@ -30,14 +30,14 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg w-full">
+    <div class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg w-full overflow-y-scroll">
         <div class="p-4">
             <h2 class="text-lg font-semibold">Modelo Juez</h2>
             <div v-if="isLoading" class="text-center">
                 <p>Cargando...</p>
             </div>
             <div v-else-if="analysisResults">
-                <pre v-html="formatedMarkdown"></pre>
+                <div v-html="formatedMarkdown" class="prose dark:prose-invert max-w-full"></div>
             </div>
             <div v-else>
                 <p>No hay resultados disponibles.</p>

@@ -16,13 +16,14 @@ export const useCompareStore = defineStore("compare", {
     actions: {
         async addUserMessage() {
             if (!this.userInput.trim()) return;
-            this.addModelMessage("model1", this.userInput, "USER");
-            this.addModelMessage("model2", this.userInput, "USER");
-            this.userInput = "";
+            let mensajeUsuario = this.userInput.trim();
+            this.userInput = ""; // Clear input after adding message
+            this.addModelMessage("model1", mensajeUsuario, "USER");
+            this.addModelMessage("model2", mensajeUsuario, "USER");
 
             this.modelIsTyping = true;
-            let responseModel1 = await HuggingFaceService.queryLLM(this.userInput, this.selectedModel1);
-            let responseModel2 = await HuggingFaceService.queryLLM(this.userInput, this.selectedModel2);
+            let responseModel1 = await HuggingFaceService.queryLLM(mensajeUsuario, this.selectedModel1);
+            let responseModel2 = await HuggingFaceService.queryLLM(mensajeUsuario, this.selectedModel2);
             this.modelIsTyping = false;
             this.addModelMessage("model1", responseModel1, "MODEL");
             this.addModelMessage("model2", responseModel2, "MODEL");
@@ -60,7 +61,7 @@ export const useCompareStore = defineStore("compare", {
             this.messagesModel2 = [];
         },
         async analysisResults() {
-			return await OpenAIService.analyzeMultipleModels(this.messagesModel1, this.messagesModel2);
+			return await OpenAIService.analyzeMultipleModelResults(this.messagesModel1, this.messagesModel2);
 		}
     },
 });

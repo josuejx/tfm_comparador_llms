@@ -3,6 +3,7 @@
 
 /* Diseño inspirado en https://multipurposethemes.com/blog/desktop-chatbot-ui-design-simplify-chatbot-integration/ */
 @plugin "@midudev/tailwind-animations";
+@plugin "@tailwindcss/typography";
 
 @theme {
 	--color-theme-lightgray: #eef0f8;
