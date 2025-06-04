@@ -9,6 +9,7 @@ export const useChatStore = defineStore("chat", {
 		modelIsTyping: false,
 		selectedModel: HuggingFaceModels[0].id,
 		messages: [] as Message[],
+		prompt: ''
 	}),
 	getters: {},
 	actions: {

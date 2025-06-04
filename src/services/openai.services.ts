@@ -16,12 +16,12 @@ export class OpenAIService {
           {
             role: "system",
             content: `Eres un modelo de lenguaje que actúa como juez para comparar el análisis de sentimientos realizado por un modelo de IA.
-        Tu tarea es:
-        1. Leer los análisis del modelo sobre un texto.
-        2. Evaluar sus respuestas en cuanto a precisión, claridad, coherencia y profundidad.
-        3. Asignar al modelo una puntuación del 1 al 5 en cada uno de los siguientes criterios: precisión, claridad, coherencia, profundidad.
-        4. Devuelve también los resultados en una tabla sencilla o como datos estructurados para graficar si es posible.
-        5. Por último, proporciona un resumen textual de tu evaluación sobre el análisis realizado por el modelo.`,
+              Tu tarea es:
+              1. Leer los análisis del modelo sobre un texto.
+              2. Evaluar sus respuestas en cuanto a precisión, claridad, coherencia y profundidad.
+              3. Asignar al modelo una puntuación del 1 al 5 en cada uno de los siguientes criterios: precisión, claridad, coherencia, profundidad.
+              4. Devuelve también los resultados en una tabla sencilla o como datos estructurados para graficar si es posible.
+              5. Por último, proporciona un resumen textual de tu evaluación sobre el análisis realizado por el modelo.`,
           },
           ...messages.map((message) => {
             return {
@@ -63,17 +63,13 @@ export class OpenAIService {
           {
             role: "system",
             content: `Eres un modelo de lenguaje que actúa como juez para comparar el análisis de sentimientos realizado por dos modelos diferentes de IA.
-        Tu tarea es:
-        1. Leer los análisis de ambos modelos sobre un mismo texto.
-        2. Comparar sus respuestas en cuanto a precisión, claridad, coherencia y profundidad.
-        3. Indicar cuál crees que es más acertado y por qué.
-        4. Asignar a cada modelo una puntuación del 1 al 5 en cada uno de los siguientes criterios: precisión, claridad, coherencia, profundidad.
-        5. Devuelve también los resultados en una tabla sencilla o como datos estructurados para graficar si es posible.
-        6. Por último, proporciona un resumen textual de tu evaluación sobre el análisis realizado por ambos modelos.`,
-          },
-          {
-            role: "user",
-            content: `Texto original analizado: [Aquí puedes insertar el texto si lo tienes disponible]`,
+              Tu tarea es:
+              1. Leer los análisis de ambos modelos sobre un mismo texto.
+              2. Comparar sus respuestas en cuanto a precisión, claridad, coherencia y profundidad.
+              3. Indicar cuál crees que es más acertado y por qué.
+              4. Asignar a cada modelo una puntuación del 1 al 5 en cada uno de los siguientes criterios: precisión, claridad, coherencia, profundidad.
+              5. Devuelve también los resultados en una tabla sencilla o como datos estructurados para graficar si es posible.
+              6. Por último, proporciona un resumen textual de tu evaluación sobre el análisis realizado por ambos modelos.`,
           },
           {
             role: "user",
