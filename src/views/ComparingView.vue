@@ -5,6 +5,7 @@ import SendIcon from "@/assets/icons/SendIcon.vue";
 import ModelButtonSelector from "@/components/global/ModelButtonSelector.vue";
 import { HuggingFaceModels } from "@/services/huggingface.services";
 import router from "@/router";
+import PropositoSelector from "@/components/global/PropositoSelector.vue";
 
 const compareStore = useCompareStore();
 
@@ -29,6 +30,10 @@ function redirectToAnalysis() {
 
 <template>
   <div class="flex flex-col gap-4 w-full">
+    <PropositoSelector
+      :prompt-system="compareStore.promptSystem"
+      :prompt-juez="compareStore.promptJuez"
+      :use-comparacion="true" />
     <div class="grow flex gap-4 w-full">
       <div
         class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg flex-1 overflow-y-auto flex flex-col gap-2 px-4 pt-4"

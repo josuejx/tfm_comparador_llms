@@ -9,7 +9,7 @@ const HuggingFaceModels = [
 ];
 
 class HuggingFaceService {
-  static async queryLLM(input: string, model: string) {
+  static async queryLLM(input: string, model: string, promptSystem: string = "") {
     try {
       const client = new InferenceClient(HF_TOKEN);
 
@@ -19,9 +19,7 @@ class HuggingFaceService {
         messages: [
           {
             role: "system",
-            content: `Eres un modelo de lenguaje que analiza el sentimiento de un texto. 
-            Tu tarea es clasificar el sentimiento del texto en una de las siguientes categorías: 'Positivo', 'Negativo' o 'Neutral'. 
-            Proporciona también el razonamiento detrás de tu clasificación.`,
+            content: promptSystem,
           },
           {
             role: "user",

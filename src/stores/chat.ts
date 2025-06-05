@@ -9,7 +9,8 @@ export const useChatStore = defineStore("chat", {
 		modelIsTyping: false,
 		selectedModel: HuggingFaceModels[0].id,
 		messages: [] as Message[],
-		prompt: ''
+		promptSystem: '',
+		promptJuez: '',
 	}),
 	getters: {},
 	actions: {
@@ -26,7 +27,7 @@ export const useChatStore = defineStore("chat", {
 			this.userInput = "";
 
 			this.modelIsTyping = true;
-			let response = await HuggingFaceService.queryLLM(newMessage.content, this.selectedModel);
+			let response = await HuggingFaceService.queryLLM(newMessage.content, this.selectedModel, this.promptSystem);
 			this.modelIsTyping = false;
 			this.addModelMessage(response, "MODEL");
 		},
@@ -45,7 +46,7 @@ export const useChatStore = defineStore("chat", {
 			this.messages = [];
 		},
 		async analysisResults() {
-			return await OpenAIService.analyzeModelResults(this.messages);
+			return await OpenAIService.analyzeModelResults(this.messages, this.promptJuez);
 		}
 	},
 });

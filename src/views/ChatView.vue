@@ -10,8 +10,7 @@ const chatStore = useChatStore();
 <template>
     <ModelSelector class="hidden lg:flex" />
     <div class="flex-1 flex flex-col min-h-full space-y-4">
-        <PropositoSelector :prompt="chatStore.prompt" />
+        <PropositoSelector :prompt-system="chatStore.promptSystem" :prompt-juez="chatStore.promptJuez" :use-comparacion="false" />
         <ChatWindow class="grow" />
     </div>
-    <!-- <DatasetSelector class="hidden 2xl:flex" /> -->
 </template>
