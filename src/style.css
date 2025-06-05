@@ -2,15 +2,17 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Diseño inspirado en https://multipurposethemes.com/blog/desktop-chatbot-ui-design-simplify-chatbot-integration/ */
+@plugin "@midudev/tailwind-animations";
+@plugin "@tailwindcss/typography";
 
 @theme {
-  --color-theme-lightgray: #EEF0F8;
-  --color-theme-steelblue: #1C2E4C;
-  --color-theme-darkgray: #3E557F;
-  --color-theme-midnight: #0C1A32;
-  --color-theme-seablue: #6993FF;
+	--color-theme-lightgray: #eef0f8;
+	--color-theme-steelblue: #1c2e4c;
+	--color-theme-midnight: #0c1a32;
+	--color-theme-seablue: #6993ff;
+	--color-theme-moon: #3e557f;
 }
 
 body {
-  @apply bg-theme-lightgray dark:bg-theme-midnight;
+	@apply bg-theme-lightgray dark:bg-theme-steelblue;
 }

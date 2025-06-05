@@ -1,6 +1,12 @@
 <script setup lang="ts">
+import TopBar from "@/components/layout/TopBar.vue";
 </script>
 
 <template>
-  <h1 class="text-3xl">Comparador LLMs para análisis de sentimientos</h1>
+  <div class="flex flex-col min-h-screen max-h-screen dark:text-white">
+    <TopBar class="animate-slide-in-top" />
+    <div id="router-content" class="grow flex p-4 gap-4 overflow-y-auto overflow-x-hidden animate-zoom-in">
+      <RouterView />
+    </div>
+  </div>
 </template>
