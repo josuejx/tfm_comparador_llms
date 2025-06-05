@@ -16,6 +16,9 @@ export const useChatStore = defineStore("chat", {
 	actions: {
 		async addUserMessage() {
 			if (!this.userInput.trim()) return;
+			if (this.promptSystem.trim() === '') {
+				return alert("Por favor, ingresa un prompt de sistema.");
+			}
 			const newMessage: Message = {
 				id: this.messages.length + 1,
 				content: this.userInput.trim(),

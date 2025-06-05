@@ -24,6 +24,10 @@ function handleModelChange(modelNum: string) {
 }
 
 function redirectToAnalysis() {
+  if (compareStore.promptJuez.trim() === "") {
+    alert("Por favor, ingresa un prompt para la comparación.");
+    return;
+  }
   router.push("/analysis/compare");
 }
 </script>

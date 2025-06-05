@@ -18,6 +18,9 @@ export const useCompareStore = defineStore("compare", {
     actions: {
         async addUserMessage() {
             if (!this.userInput.trim()) return;
+            if (this.promptSystem.trim() === '') {
+				return alert("Por favor, ingresa un prompt de sistema.");
+			}
             let mensajeUsuario = this.userInput.trim();
             this.userInput = ""; // Clear input after adding message
             this.addModelMessage("model1", mensajeUsuario, "USER");
