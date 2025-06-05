@@ -1,31 +1,29 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { computed, ref, watch } from "vue";
+import { useChatStore } from "@/stores/chat";
+import { useCompareStore } from "@/stores/compare";
+
+const chatStore = useChatStore();
+const compareStore = useCompareStore();
 
 const props = defineProps({
-  promptSystem: {
-    type: String,
-    default: "",
-  },
-  promptJuez: {
-    type: String,
-    default: "",
-  },
   useComparacion: {
     type: Boolean,
     default: false,
   },
 });
-const promptSystemValue = ref(props.promptSystem || "");
-const promptJuezValue = ref(props.promptJuez || "");
+const actualStore = computed(() => {
+  return props.useComparacion ? compareStore : chatStore;
+});
+const promptSystemValue = ref(actualStore.value.promptSystem || "");
+const promptJuezValue = ref(actualStore.value.promptJuez || "");
 
 // Actualizar el valor de la propiedad `prompt` cuando cambie `promptValue`
 watch(promptSystemValue, (newValue) => {
-  let prompt = props.promptSystem || "";
-  prompt = newValue;
+  actualStore.value.promptSystem = newValue;
 });
 watch(promptJuezValue, (newValue) => {
-  let prompt = props.promptJuez || "";
-  prompt = newValue;
+  actualStore.value.promptJuez = newValue;
 });
 
 const predefinidos = [

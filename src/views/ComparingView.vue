@@ -33,14 +33,11 @@ function redirectToAnalysis() {
 </script>
 
 <template>
-  <div class="flex flex-col gap-4 w-full">
-    <PropositoSelector
-      :prompt-system="compareStore.promptSystem"
-      :prompt-juez="compareStore.promptJuez"
-      :use-comparacion="true" />
-    <div class="grow flex gap-4 w-full">
+  <div class="flex flex-col gap-4 max-h-full w-full overflow-hidden">
+    <PropositoSelector :use-comparacion="true" />
+    <div class="flex gap-4 w-full h-[500px]">
       <div
-        class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg flex-1 overflow-y-auto flex flex-col gap-2 px-4 pt-4"
+        class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg flex-1 overflow-y-scroll flex flex-col gap-2 px-4 pt-4"
       >
         <div>
           <ModelButtonSelector
@@ -55,7 +52,7 @@ function redirectToAnalysis() {
         />
       </div>
       <div
-        class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg flex-1 overflow-y-auto flex flex-col gap-2 px-4 pt-4"
+        class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg flex-1 overflow-y-scroll flex flex-col gap-2 px-4 pt-4"
       >
         <div>
           <ModelButtonSelector
