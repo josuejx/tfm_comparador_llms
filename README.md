@@ -10,9 +10,9 @@ Los usuarios pueden comparar resultados, observar cómo responden los modelos a 
 
 ## 🌐 Tecnologías Utilizadas
 
-- **Frontend Framework**: [Vue.js](https://vuejs.org/) / [React](https://reactjs.org/) (especificar el que uses)
-- **Empaquetador**: [Vite](https://vitejs.dev/) / Webpack
-- **Estilo**: Tailwind CSS / CSS Modules / otro
+- **Frontend Framework**: [Vue.js](https://vuejs.org/)
+- **Empaquetador**: [Vite](https://vitejs.dev/)
+- **Estilo**: Tailwind CSS
 - **HuggingFace Inference API**
 
 ## 🚀 Características Principales
