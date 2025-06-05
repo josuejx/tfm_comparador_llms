@@ -7,6 +7,10 @@ import router from "@/router";
 const chatStore = useChatStore();
 
 function redirectToAnalysis() {
+  if (chatStore.promptJuez.trim() === "") {
+    alert("Por favor, ingresa un prompt para el análisis.");
+    return;
+  }
   router.push('/analysis/chat')
 }
 </script>
