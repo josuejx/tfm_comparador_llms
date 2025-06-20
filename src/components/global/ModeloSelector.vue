@@ -26,13 +26,18 @@ const setSelectedModel = (modelId: string) => {
   <div class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg min-w-sm flex flex-col">
     <h2 class="text-lg p-4">Listado de Modelos</h2>
     <div class="grow flex flex-col gap-2 bg-theme-lightgray dark:bg-theme-midnight p-4 rounded-b-2xl">
-      <div class="flex items-center gap-2 p-4 rounded-2xl cursor-pointer hover:scale-105 active:scale-95 transition"
+      <div class="flex flex-col p-2 rounded-2xl cursor-pointer hover:scale-105 active:scale-95 transition"
         v-for="model in HuggingFaceModels" :key="model.id" @click="setSelectedModel(model.id)" :class="{
           'bg-theme-seablue dark:bg-theme-seablue text-white':
             model.id === chatStore.selectedModel,
           'bg-white dark:bg-theme-steelblue': model.id !== chatStore.selectedModel,
         }">
         <p>{{ model.name }}</p>
+        <p class="text-[11px]" :class="{
+          'text-gray-300':
+            model.id === chatStore.selectedModel,
+          'text-gray-400': model.id !== chatStore.selectedModel,
+        }">{{ model.id }}</p>
       </div>
     </div>
   </div>

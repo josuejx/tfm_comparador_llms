@@ -15,7 +15,7 @@ defineProps<{
             v-for="model in HuggingFaceModels"
             :key="model.id"
             :value="model.id">
-            {{ model.name }}
+            {{ model.id }}
         </option>
     </select>
 </template>
