@@ -101,8 +101,8 @@ function buttonClicked(item: any) {
     class="bg-white dark:bg-theme-midnight rounded-2xl shadow-lg w-full p-4 space-y-4"
   >
     <div class="flex space-between items-center w-full">
-      <h2 class="text-lg font-semibold w-full">Prompts</h2>
-      <div class="flex items-center space-x-2 w-full justify-end">
+      <h2 class="text-lg font-semibold">Prompts</h2>
+      <div class="flex items-center space-x-2 flex-1 justify-end">
         <button
           v-for="(item, index) in predefinidos"
           :key="index"
