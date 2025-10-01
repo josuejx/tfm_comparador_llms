@@ -6,6 +6,7 @@ const HuggingFaceModels = [
   { id: "meta-llama/Llama-3.1-8B-Instruct", name: "Llama 3.1" },
   { id: "Qwen/Qwen3-235B-A22B", name: "Qwen 3" },
   { id: "google/gemma-3-27b-it", name: "Gemma 3" },
+  { id: "deepseek-ai/DeepSeek-V3.2-Exp", name: "DeepSeek V3.2" },
 ];
 
 class HuggingFaceService {
